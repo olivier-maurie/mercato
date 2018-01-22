@@ -1,0 +1,40 @@
+<div ng-include="'views/header.html'"></div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-8">
+      <table class="table">
+        <thead class="thead-dark">
+        <tr>
+          <th scope="col">Nom du joueur</th>
+          <th scope="col">Position</th>
+          <th scope="col">Prix</th>
+          <th scope="col">Ma mise</th>
+        </tr>
+        </thead>
+        <tr ng-repeat="player in playersList">
+          <td>{{player.name}}</td>
+          <td>{{player.position}}</td>
+          <td>{{player.min_price}}</td>
+          <td>
+            <button ng-click="selectPlayer(player)">Ajouter</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-4">
+      <div>
+        <button class="btn btn-success">Terminer le tour</button>
+      </div>
+      <ul>
+        <li ng-repeat="select in selectedPlayers" class="d-flex justify-content-between">
+          <button ng-click="removePlayer(select)">X</button>
+          <span class="font-weight-light col-8">{{select.name}}</span>
+          <input class="form-control col-4" type="number" placeholder={{select.min_price}} ng-model="select.price"/>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div ng-include="'views/footer.html'"></div>

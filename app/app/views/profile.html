@@ -1,0 +1,40 @@
+<div ng-include="'views/header.html'"></div>
+
+<div class="col">
+  <h1>Mon profil</h1>
+  <ul>
+    <li>{{user.mail}}</li>
+    <li>{{user.first_name}}</li>
+    <li>{{user.last_name}}</li>
+    <li>{{user.pseudo}}</li>
+  </ul>
+</div>
+
+<div>
+  <h3>Modifier mon profil</h3>
+  <form ng-submit="update()">
+    <div class="form-group">
+      <label for="pseudo">
+        <span>Pseudo</span>
+        <input type="text" name="pseudo" ng-model="pseudo" class="form-control" value="{{user.pseudo}}">
+      </label>
+    </div>
+    <div class="form-group">
+      <label for="password">
+        <span>Mot de passe</span>
+        <input type="password" ng-model="password" name="password" class="form-control">
+      </label>
+    </div>
+    <div class="form-group">
+      <label for="password_valid">
+        <span>Confirmer le mot de passe</span>
+        <input type="password" name="password_valid" ng-model="password_valid" class="form-control">
+      </label>
+    </div>
+    <div>
+      <input type="submit" value="Modifier">
+    </div>
+  </form>
+</div>
+
+<div ng-include="'views/footer.html'"></div>

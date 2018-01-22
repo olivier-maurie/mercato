@@ -1,0 +1,20 @@
+<div ng-include="'views/header.html'"></div>
+
+<div class="container-fluid">
+  <table class="table">
+    <thead class="thead-dark">
+    <tr>
+      <th>Nom du joueur</th>
+      <th>Position</th>
+      <th>Prix</th>
+    </tr>
+    </thead>
+    <tr ng-repeat="player in playersTab">
+      <td>{{player.name}}</td>
+      <td>{{player.position}}</td>
+      <td>{{player.min_price}}</td>
+    </tr>
+  </table>
+</div>
+
+<div ng-include="'views/footer.html'"></div>
